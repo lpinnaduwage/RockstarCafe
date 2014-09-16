@@ -1,0 +1,60 @@
+﻿@model List<RockstarProj.DBModel.BlogTbl>
+@{
+    ViewBag.Title = "BlogTool";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section featured {
+
+    <section class="featured"></section>
+
+    <section class="title">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span6">
+                    <h1 style="font-family: RockwellCond">BLOG TOOL</h1>
+                </div>
+                <div class="span6">
+                    <ul class="breadcrumb pull-right">
+                        <li><a href="~/">Home</a> <span class="divider">/</span></li>
+                        <li class="active">Blog</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <p>&nbsp;</p>
+    <p></p>
+    <hr />
+
+
+    <section id="about-us" class="container main">
+        <div class="row-fluid">
+            @Html.ActionLink("Add", "BlogEntry", new { GUID = "BAA69FE1-37C9-4A80-BDE6-3C45F394A064", Id = 0}, new { @class = "btn btn-success" })
+        </div>
+        <br />
+        <div class="row-fluid">
+
+            <table class="table table-striped">
+                <tr>
+                    <th><h3>Title</h3></th>
+                    <th><h3>Options</h3></th>
+                </tr>
+                @foreach (RockstarProj.DBModel.BlogTbl item in Model)
+                {
+                    <tr>
+                        <td><h5>@item.BlogTitle</h5></td>
+                        <td>@Html.ActionLink("Edit", "EditBlogEntry", new { GUID = "BAA69FE1-37C9-4A80-BDE6-3C45F394A064", Id = @item.Id}, new {@class="btn btn-warning" }) &nbsp; @Html.ActionLink("Delete", "DeleteBlogEntry", new {GUID = "BAA69FE1-37C9-4A80-BDE6-3C45F394A064", Id = @item.Id },new {@class="btn btn-warning" })</td>
+                    </tr>
+                }
+            </table>
+
+
+        </div>
+
+    </section>
+
+}
+
+
+

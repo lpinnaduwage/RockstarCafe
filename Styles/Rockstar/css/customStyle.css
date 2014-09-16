@@ -1,0 +1,20 @@
+﻿body {
+
+
+}
+
+.contact-box {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 2px;
+    margin: 100px auto;
+    padding: 20px;
+    width: 650px;
+}
+
+.login-box {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 2px;
+    margin: 50px auto;
+    padding: 20px;
+    width: 350px;
+}

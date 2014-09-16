@@ -1,0 +1,318 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+
+}
+@section featured {
+
+    @if (!Request.Browser.IsMobileDevice)
+    {
+        <section class="featured">
+            <section id="slide-show">
+                <div id="slider" class="sl-slider-wrapper">
+                    <!--Slider Items-->
+                    <div class="sl-slider">
+                        <!--Slider Item1-->
+                        <div class="sl-slide item1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+                            <div class="sl-slide-inner">
+                                <div class="container">
+                                    <img style="padding-left: 50px; padding-top: 100px;" class="pull-right" src="~/Styles/Rockstar/images/UpdatedHome/H.E.L.P-Picture.png" alt="" />
+                                    <h2 style="text-align: center; font-family: RockwellCond">ROCKSTAR PROFILES</h2>
+                                    <h3 style="text-align: center; font-family: 'SEGOEUIL'" class="gap">Tibor, Brad and Teodor tackle 
+                                                    homelessness by distributing care packages while spreading awareness about the issue through their documentaries.</h3>
+
+                                    <a href="~/Home/Blog">
+                                        <img src="~/Styles/Rockstar/images/Home/Learn-More-Button.png" style="padding-left: 250px;" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/Slider Item1-->
+
+                        <!--Slider Item2-->
+                        <div class="sl-slide item2" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+                            <div class="sl-slide-inner">
+                                <div class="container">
+                                    <img class="pull-right" style="padding-left: 50px" src="~/Styles/Rockstar/images/Home/Become-a-Rockstar-Picture.png" alt="" />
+                                    <h2 style="text-align: center; font-family: RockwellCond">BECOME A ROCKSTAR</h2>
+                                    <h3 style="text-align: center; font-family: 'SEGOEUIL'" class="gap">Want to be featured as a leader in your community? Sign up to become a Rockstar today!</h3>
+                                    <a href="~/Home/GetInvolved">
+                                        <img src="~/Styles/Rockstar/images/Home/Learn-More-Button.png" style="padding-left: 170px;" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Slider Item2-->
+
+
+
+                        <!--Slider Item3-->
+                        <div class="sl-slide item3" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+                            <div class="sl-slide-inner">
+                                <div class="container">
+                                    <img style="padding-left: 40px" class="pull-right" src="~/Styles/Rockstar/images/Home/Foster-Community-Picture.png" alt="" />
+                                    <h2 style="text-align: center; font-family: RockwellCond; padding-top: 50px">FOSTER COMMUNITY WITH YOUR VENTURE</h2>
+
+                                    <h3 style="text-align: center; font-family: 'SEGOEUIL'" class="gap">Attend our pilot event on 
+                                    September 18th at UW to discover the world of social entrepreneurship, featuring 3 international speakers and 6 student Rockstars. Who will you meet at Rockstar Cafe?</h3>
+                                    @*                                <a href="~/Home/GetInvolved">
+                                    <img src="~/Styles/Rockstar/images/Home/Learn-More-Button.png" style="padding-left: 170px;" />
+                                </a>*@
+                                    <a class="btn btn-large btn-transparent" style="margin-left: 170px" href="https://ticketfi.com/event/21/rockstar-cafe-passion-shapes-community">EVENT DETAILS</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Slider Item3-->
+                    </div>
+                    <nav id="nav-arrows" class="nav-arrows">
+                        <span class="nav-arrow-prev"><i class="icon-angle-left"></i></span>
+                        <span class="nav-arrow-next"><i class="icon-angle-right"></i></span>
+                    </nav>
+                </div>
+            </section>
+
+
+            <section class="main-info">
+                <div class="container">
+                    <div class="row-fluid">
+                        <div class="span4" style="padding-left: 30px;">
+                            <h2 style="font-family: RockwellCond; color: #594F8B">SOCIAL MEDIA</h2>
+                            <h4 style="font-family: 'SEGOEUIL'; color: #594F8B">Follow us on our social media</h4>
+                            <h4 style="font-family: 'SEGOEUIL'; color: #594F8B">outlets for inspirational updates!</h4>
+                        </div>
+
+                        <div class="span5 carousel-inner" style="padding-top: 30px;">
+                            <div class="active item">
+                                <ul class="thumbnails">
+                                    <li>
+                                        <a href="https://twitter.com/therockstarcafe">
+                                            <img src="~/Styles/Rockstar/images/UpdatedHome/Twitter.png" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.facebook.com/rockstarcafe?ref=hl">
+                                            <img src="~/Styles/Rockstar/images/UpdatedHome/Facebook.png" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="~/Styles/Rockstar/images/UpdatedHome/Youtube.png" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://instagram.com/RockstarCafe">
+                                            <img src="~/Styles/Rockstar/images/UpdatedHome/Instagram.png" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://ca.linkedin.com/pub/rockstar-caf%C3%A9/a0/663/433">
+                                            <img src="~/Styles/Rockstar/images/UpdatedHome/Linked-in.png" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+
+                        <!-- Carousel items -->
+                        <!-- /Carousel items -->
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span4" style="padding-left: 30px; padding-top: 30px;">
+                            <h2 style="font-family: RockwellCond; color: #594F8B">SPONSORS</h2>
+                        </div>
+
+                        <div class="span8 carousel-inner" style="padding-top: 30px;">
+                            <div class="active item">
+                                <ul class="thumbnails">
+                                    <li>
+                                        <a href="https://uwaterloo.ca/conrad-business-entrepreneurship-technology/">
+                                            <img src="~/Styles/Rockstar/images/Sponsors/Black-Conrad-Logo.png" style="width: 224px;" />
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="http://velocity.uwaterloo.ca/">
+                                            <img src="~/Styles/Rockstar/images/Sponsors/Black-Velocity-Logo.png" style="width: 224px;" />
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="https://uwaterloo.ca/stpauls/greenhouse">
+                                            <img src="~/Styles/Rockstar/images/Sponsors/Black-St.-Pauls-Logo.png" style="width: 224px;" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+
+                        <!-- Carousel items -->
+                        <!-- /Carousel items -->
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!--Services-->
+            <section id="services">
+                <div class="container">
+                    <div class="center gap">
+                        <h1 style="font-size: 49px; font-family: RockwellCond; text-align: center; padding-top: 20px;">WHAT WE ARE ALL ABOUT</h1>
+                        @*                    <img src="~/Styles/Rockstar/images/Home/What-We're-All-About.png" />*@
+                        <p style="font-size: 21px; text-align: center; font-style: italic; font-family: 'SEGOEUI'">
+                            Students should know that there are special moments that pull everything we have learned into focus. 
+                        Theory, practice, experience and talent all come to one sharp point: action. It's no longer about what 
+                        can be done, but what you will do.
+                        </p>
+
+                        @*                    <div class="center gap">
+                        <img src="~/Styles/Rockstar/images/Home/What-We're-All-About-Subtext.png" />
+                    </div>*@
+                    </div>
+
+
+                    <div class="row-fluid">
+
+                        <div class="span3">
+                            <div class="media">
+                                <div class="row-fluid">
+                                    <div class="center" style="width: 220px;">
+                                        <img src="~/Styles/Rockstar/images/UpdatedHome/Heart.png" />
+                                    </div>
+                                </div>
+                                <div class="row-fluid center">
+                                    <h2 style="font-size: 47px; font-family: 'SilentReaction'; width: 200px; padding-top: 10px;">heart</h2>
+                                </div>
+                                <div class="row-fluid center">
+                                    <p style="font-size: 15px; text-align: center; font-family: 'SEGOEUIL'; width: 200px;">Believe in your values and fight for what you stand for. Innovation is at its best when its rooted in empathy.</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="span3">
+                            <div class="media">
+                                <div class="row-fluid">
+                                    <div class="center" style="width: 220px;">
+                                        <img src="~/Styles/Rockstar/images/UpdatedHome/Soul.png" />
+                                    </div>
+                                </div>
+                                <div class="row-fluid center">
+                                    <h2 style="font-size: 47px; font-family: 'SilentReaction'; width: 200px; padding-top: 10px;">soul</h2>
+                                </div>
+                                <div class="row-fluid center">
+                                    <p style="font-size: 15px; text-align: center; font-family: 'SEGOEUIL'; width: 200px;">
+                                        Exude passion, purpose and happiness in everything you do.
+                                Paired with the ability to listen to, trust and motivate others, your idea will spread like wildfire.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="span3">
+                            <div class="media">
+                                <div class="row-fluid">
+                                    <div class="center" style="width: 220px;">
+                                        <img src="~/Styles/Rockstar/images/UpdatedHome/Brains.png" />
+                                    </div>
+                                </div>
+                                <div class="row-fluid center">
+                                    <h2 style="font-size: 47px; font-family: 'SilentReaction'; width: 200px; padding-top: 10px;">brains</h2>
+                                </div>
+                                <div class="row-fluid center">
+                                    <p style="font-size: 15px; text-align: center; font-family: 'SEGOEUIL'; width: 200px;">
+                                        Think and decide through a systems perspective
+                                Synergize ideas, creating one stronger than each was on its own.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="span3">
+                            <div class="media">
+                                <div class="row-fluid">
+                                    <div class="center" style="width: 220px;">
+                                        <img src="~/Styles/Rockstar/images/UpdatedHome/Courage.png" />
+                                    </div>
+                                </div>
+                                <div class="row-fluid center">
+                                    <h2 style="font-size: 47px; font-family: 'SilentReaction'; width: 200px; padding-top: 10px;">courage</h2>
+                                </div>
+                                <div class="row-fluid center">
+                                    <p style="font-size: 15px; text-align: center; font-family: 'SEGOEUIL'; width: 200px;">See opportunities where others only see dead-ends and take that leap of faith.</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="gap"></div>
+
+                </div>
+            </section>
+            <!--/Services-->
+
+            @*        <section id="clients" class="main" style="padding-top: 50px; padding-bottom: 50px;">
+            <div class="container">
+                <div class="row-fluid">
+                    <div class="span3">
+                        <img src="~/Styles/Rockstar/images/Home/Social-Media-Blurb.png" />
+                    </div>
+                    <div class="span9">
+                        <div id="myCarousel" class="carousel slide clients">
+                            <!-- Carousel items -->
+                            <div class="carousel-inner">
+                                <div class="active item">
+                                    <div class="row-fluid">
+                                        <ul class="thumbnails">
+
+                                            <li>
+                                                <a href="https://www.facebook.com/rockstarcafe?ref=hl">
+                                                    <img src="~/Styles/Rockstar/images/Home/Facebook-Icon.png" style="width: 150px; height: 149px;" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://twitter.com/therockstarcafe">
+                                                    <img src="~/Styles/Rockstar/images/Home/Twitter-Icon.png" style="width: 150px; height: 149px;" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <img src="~/Styles/Rockstar/images/Home/Youtube-Icon.png" style="width: 150px; height: 149px;" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/Home/Blog">
+                                                    <img src="~/Styles/Rockstar/images/Home/Blog-Icon.png" style="width: 150px; height: 149px;" />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Carousel items -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>*@
+
+
+
+        </section>   
+    }
+    else
+    {
+        <h3 style="text-align:center">The mobile website is currently under construction, Sorry for the inconvenience. 
+            If you'd like more information about Rockstar Cafe, please visit our website on a computer/desktop.  
+            If you'd like to purchase a ticket to our event, <a href="https://ticketfi.com/event/21/rockstar-cafe-passion-shapes-community">Click here</a>.
+        </h3>   
+    }
+}

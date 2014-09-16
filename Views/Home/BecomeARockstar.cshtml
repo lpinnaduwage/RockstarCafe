@@ -1,0 +1,224 @@
+﻿@using CaptchaMvc.HtmlHelpers;
+@model RockstarProj.Models.InvolvedModel
+@{
+    ViewBag.Title = "Become a Rockstar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section featured {
+    @if (!Request.Browser.IsMobileDevice)
+    {
+        using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {       
+
+
+
+            <section class="title">
+                <div class="container">
+                    <div class="row-fluid">
+                        <div class="span6">
+                            <h1 style="font-family: RockwellCond">BECOME A ROCKSTAR</h1>
+                        </div>
+                        <div class="span6">
+                            <ul class="breadcrumb pull-right">
+                                <li><a href="~/">Home</a> <span class="divider">/</span></li>
+                                <li class="active">Become a Rockstar</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <p>&nbsp;</p>
+            <p></p>
+            <hr />
+
+
+            <section id="about-us" class="container main">
+
+                <div class="center">
+                    <div class="row-fluid">
+                        <div class="span12">
+                            @if (TempData["RegisterSuccess"] == "true")
+                            {
+                                <div class="alert alert-success">
+                                    <h1 style="font-family: RockwellCond">Thank you for registering!</h1>
+                                </div>
+                            }
+                            else if (TempData["RegisterSuccess"] == "false")
+                            {
+                                <div class="alert alert-error">
+                                    <h1 style="font-family: RockwellCond">Error registering. Please contact system admin.</h1>
+                                </div>                        
+                            }
+                            else if (TempData["MissingFields"] == "true")
+                            {
+                                <div class="alert alert-error">
+                                    <h1 style="font-family: RockwellCond">First name, Last name and Email must be entered!</h1>
+                                </div>     
+                            }
+                            else if (TempData["InvalidCaptcha"] == "true")
+                            {
+                                <div class="alert alert-error">
+                                    <h1 style="font-family: RockwellCond">Invalid Captcha!</h1>
+                                </div>     
+                            }
+                        </div>
+                    </div>
+
+                    <div class="login-box">
+                        <div class="row-fluid">
+                            <div class="span12">
+                                @Html.TextBoxFor(m => m.FirstName, null, new { @class = "form-control", @placeholder = "First Name", @style = "font-family: 'RockwellCond'" })
+                            </div>
+                        </div>
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                @Html.TextBoxFor(m => m.LastName, null, new { @class = "form-control", @placeholder = "Last Name", @style = "font-family: 'RockwellCond'" })
+                            </div>
+                        </div>
+
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                @Html.TextBoxFor(m => m.EmailAddress, null, new { @class = "form-control", @placeholder = "Email Address", @style = "font-family: 'RockwellCond'" })
+                            </div>
+                        </div>
+
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                @Html.TextBoxFor(m => m.PhoneNumber, null, new { @class = "form-control", @placeholder = "Phone Number", @style = "font-family: 'RockwellCond'" })
+                            </div>
+                        </div>
+
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                @Html.TextBoxFor(m => m.Facebook, null, new { @class = "form-control", @placeholder = "Facebook", @style = "font-family: 'RockwellCond'" })
+                            </div>
+                        </div>
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                @Html.TextBoxFor(m => m.Twitter, null, new { @class = "form-control", @placeholder = "Twitter", @style = "font-family: 'RockwellCond'" })
+                            </div>
+                        </div>
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                @Html.TextBoxFor(m => m.LinkedIn, null, new { @class = "form-control", @placeholder = "LinkedIn", @style = "font-family: 'RockwellCond'" })
+                            </div>
+                        </div>
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                @Html.TextBoxFor(m => m.Instagram, null, new { @class = "form-control", @placeholder = "Instagram", @style = "font-family: 'RockwellCond'" })
+                            </div>
+                        </div>
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                @Html.TextBoxFor(m => m.Skype, null, new { @class = "form-control", @placeholder = "Skype", @style = "font-family: 'RockwellCond'" })
+                            </div>
+                        </div>
+
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                @Html.TextBoxFor(m => m.CompanyProjName, null, new { @class = "form-control", @placeholder = "Company/Project Name", @style = "font-family: 'RockwellCond'" })
+                            </div>
+                        </div>
+
+                        @*                                           <div class="row-fluid">
+                        <div class="span12">
+                            @Html.TextAreaFor(m => m.CompanyProjDescription, new { @class = "form-control  span5", @style = "font-family: 'RockwellCond';width:240px;resize:none;overflow-y: scroll;", @placeholder = "Company/Project Description" })
+                        </div>
+                    </div>*@
+
+
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                @Html.TextAreaFor(m => m.ImpactQuestion, new { @class = "form-control  span5", @style = "font-family: 'RockwellCond';width:240px;resize:none;overflow-y: scroll;", @placeholder = "Describe your high-impact/positive change project or organization as well as your leadership role in it (max 300 words).", @maxlength = 300 })
+                            </div>
+                        </div>
+
+                        @*                                        <div class="row-fluid">
+                        <div class="span12">
+                            @Html.TextAreaFor(m => m.QuantifiableMetrics, new { @class = "form-control  span5", @style = "font-family: 'RockwellCond';width:240px;resize:none;overflow-y: scroll;", @placeholder = "Are there any quantifiable metrics you can provide that display the impact of your project" })
+                        </div>
+                    </div>*@
+
+
+
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                @Html.TextAreaFor(m => m.QuantifiableMetrics, new { @class = "form-control  span5", @style = "font-family: 'RockwellCond';width:240px;resize:none;overflow-y: scroll;", @placeholder = "Describe the impact you’ve had to date (Use metrics if applicable) (max 150 words)", @maxlength = 150 })
+                            </div>
+                        </div>
+
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                @Html.TextAreaFor(m => m.ExampleQuestion, new { @class = "form-control  span5", @style = "font-family: 'RockwellCond';width:240px;resize:none;overflow-y: scroll;", @placeholder = "Give an example of a time over the course of your project where you’ve exhibited one of Heart, Soul, Brains, or Courage (Max 150 words)", @maxlength = 150 })
+                            </div>
+                        </div>
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                @Html.TextAreaFor(m => m.LearnQuestion, new { @class = "form-control  span5", @style = "font-family: 'RockwellCond';width:240px;resize:none;overflow-y: scroll;", @placeholder = "What can people learn from you at a Rockstar Café event? (no max)", @maxlength = 8000 })
+                            </div>
+                        </div>
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                @Html.TextAreaFor(m => m.AdditionalInfo, new { @class = "form-control  span5", @style = "font-family: 'RockwellCond';width:240px;resize:none;overflow-y: scroll;", @placeholder = "Is there anything else you want your profile to say? (no max)", @maxlength = 800 })
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                @Html.TextBoxFor(m => m.FirstFile, new { @type = "file", @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span12">
+                                @Html.TextBoxFor(m => m.SecondFile, new { @type = "file", @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span12">
+                                @Html.TextBoxFor(m => m.ThirdFile, new { @type = "file", @class = "form-control" })
+                            </div>
+                        </div>
+                        <hr />
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                @Html.Captcha("Refresh", "Input", 5, "Is required field.", true)
+                            </div>
+                        </div>
+                        <hr />
+
+                        <div class="center">
+                            <div class="row-fluid center">
+                                <div>
+                                    <input type="submit" name="Submit" id="Submit" class="center btn btn-success btn-large" value="Submit" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        }
+    }else{
+         <h3 style="text-align:center">The mobile website is currently under construction, Sorry for the inconvenience.
+            If you'd like more information about Rockstar Cafe, please visit our website on a computer/desktop.  
+            If you'd like to purchase a ticket to our event, <a href="https://ticketfi.com/event/21/rockstar-cafe-passion-shapes-community">Click here</a>.
+        </h3>   
+    }
+}

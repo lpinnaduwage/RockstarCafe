@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name='viewport' content='user-scalable=no'>
+    <title>@ViewBag.Title - RockstarCafe</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+
+    @Scripts.Render("~/bundles/modernizr")
+
+    @* #76489c*@
+
+    <link href="@Url.Content("~/Styles/Rockstar/css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+
+    <link href="@Url.Content("~/Styles/Rockstar/css/customStyle.css")" rel="stylesheet" type="text/css" />
+
+
+
+
+    <link href="@Url.Content("~/Styles/Rockstar/css/bootstrap-responsive.min.css")" rel="stylesheet" type="text/css" />
+
+    <link href="@Url.Content("~/Styles/Rockstar/css/font-awesome.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Styles/Rockstar/css/custom-font.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Styles/Rockstar/css/main.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Styles/Rockstar/css/sl-slide.css")" rel="stylesheet" type="text/css" />
+    <script src= "@Url.Content("~/Styles/Rockstar/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js")" type="text/javascript"></script>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+
+
+    <script src= "@Url.Content("~/Styles/Rockstar/js/vendor/jquery-1.9.1.min.js")" type="text/javascript"></script>
+    <script src= "@Url.Content("~/Styles/Rockstar/js/bootstrap.min.js")" type="text/javascript"></script>
+    <script src= "@Url.Content("~/Styles/Rockstar/js/main.js")" type="text/javascript"></script>
+    <script src= "@Url.Content("~/Styles/Rockstar/js/jquery.ba-cond.min.js")" type="text/javascript"></script>
+    <script src= "@Url.Content("~/Styles/Rockstar/js/jquery.slitslider.js?v=1")" type="text/javascript"></script>
+    @*    <script src= "@Url.Content("~/Styles/Rockstar/js/bootstrap-filestyle.min.js")" type="text/javascript"></script>*@
+
+
+
+    <!-- SL Slider -->
+    <script type="text/javascript">
+        $(function () {
+            var Page = (function () {
+
+                var $navArrows = $('#nav-arrows'),
+                slitslider = $('#slider').slitslider({
+                    autoplay: true
+                }),
+
+                init = function () {
+                    initEvents();
+                },
+                initEvents = function () {
+                    $navArrows.children(':last').on('click', function () {
+                        slitslider.next();
+                        return false;
+                    });
+
+                    $navArrows.children(':first').on('click', function () {
+                        slitslider.previous();
+                        return false;
+                    });
+                };
+
+                return { init: init };
+
+            })();
+
+            Page.init();
+        });
+    </script>
+
+
+</head>
+<body>
+    <header class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a id="logo" class="pull-left" href="~/" style="width: 520px; margin-left: -21px;"></a>
+
+                @if (!Request.Browser.IsMobileDevice)
+                {
+                    <div class="nav-collapse collapse pull-right">
+                        <ul class="nav">
+                            <li>@Html.ActionLink("Home", "Index", "Home", null, new { style = "font-family: RockwellCond; font-size: medium" })</li>
+                            <li>@Html.ActionLink("Our Story", "About", "Home", null, new { style = "font-family: RockwellCond; font-size: medium" })</li>
+                            @*                        <li>@Html.ActionLink("Partners", "Partners", "Home", null, new { style = "font-family: RockwellCond; font-size: medium" })</li>*@
+
+                            <li>@Html.ActionLink("Rockstars", "Rockstar", "Home", null, new { style = "font-family: RockwellCond; font-size: medium" })</li>
+
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Get Involved
+                                <i class="icon-angle-down"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    @*                                <li>
+                                    <a href="#">Events</a>
+                                </li>*@
+                                    <li>
+                                        <a href="/Home/BecomeARockstar">Become A Rockstar</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Home/Sponsors">Become A Sponsor</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://ticketfi.com/event/21/rockstar-cafe-passion-shapes-community">Attend An Event</a>
+                                    </li>
+                                    @*                                <li>
+                                    <a href="#">Subscribe</a>
+                                </li>*@
+                                </ul>
+
+
+
+                            </li>
+
+                            @*                        <li>@Html.ActionLink("Store", "", "", null, new { style = "font-family: RockwellCond; font-size: medium" })</li>
+
+
+                        <li>@Html.ActionLink("Blog", "Blog", "Home", null, new { style = "font-family: RockwellCond; font-size: medium" })</li>
+*@
+                        </ul>
+                    </div>
+                }
+            </div>
+        </div>
+    </header>
+
+
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+
+
+
+    @*    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+            </div>
+        </div>
+    </footer>*@
+
+    <!--Footer-->
+
+    @if (!Request.Browser.IsMobileDevice)
+    {
+        <!--Bottom-->
+        <section id="bottom" class="main">
+            <!--Container-->
+            <div class="container">
+
+                <!--row-fluids-->
+                <div class="row-fluid">
+
+                    <!--Contact Form-->
+                    <div class="span3">
+                        <h4>ADDRESS</h4>
+                        <ul class="unstyled address">
+                            <li>
+                                <i class="icon-home"></i><strong>Address:</strong>  151 Charles St. West<br>
+                                Kitchener N2G 1H6 
+                            </li>
+                            <li>
+                                <i class="icon-envelope"></i>
+                                <strong>Email: </strong>mark@rockstar-cafe.ca
+                            </li>
+                            @*                        <li>
+                            <i class="icon-globe"></i>
+                            <strong>Website:</strong> www.domain.com
+                        </li>*@
+                            <li>
+                                <i class="icon-phone"></i>
+                                <strong>Phone Number:</strong>  416-318-1481
+                            </li>
+                        </ul>
+                    </div>
+                    <!--End Contact Form-->
+
+                    <!--Important Links-->
+                    <div id="tweets" class="span3">
+                        <h4>Our Company</h4>
+                        <div>
+                            <ul class="arrow">
+                                <li><a href="~/Home/About">About Us</a></li>
+                                <li><a href="~/Home/Sponsors">Sponsors</a></li>
+                                <li><a href="~/Home/GetInvolved">Get Involved</a></li>
+                                <li><a href="~/Home/Blog">Blog</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--Important Links-->
+
+                    <!--Archives-->
+                    <div id="archives" class="span3">
+                        <h4>Archives</h4>
+                        <div>
+                            <ul class="arrow">
+                                <li><a href="#">August 2014 (1)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--End Archives-->
+
+
+
+                </div>
+                <!--/row-fluid-->
+            </div>
+            <!--/container-->
+
+        </section>
+        <!--/bottom-->
+    }
+
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span5 cp">
+                    &copy; 2014 <a target="_blank" href="~/" title="RockstarCafe">RockstarCafe</a>. All Rights Reserved.
+                </div>
+                <!--/Copyright-->
+                <div class="span6">
+                    @*  <ul class="social pull-right">
+                        <li>
+                            <a href="https://www.facebook.com/rockstarcafe?ref=hl">
+                                <img src="~/Styles/Rockstar/images/Home/Facebook-Icon.png" style="width: 30px;" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/therockstarcafe">
+                                <img src="~/Styles/Rockstar/images/Home/Twitter-Icon.png" style="width: 30px;" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="~/Styles/Rockstar/images/Home/Youtube-Icon.png" style="width: 30px;" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="~/Styles/Rockstar/images/Home/Blog-Icon.png" style="width: 30px;" />
+                            </a>
+                        </li>
+                    </ul>*@
+                </div>
+
+                <div class="span1">
+                    <a id="gototop" class="gototop pull-right" href="#"><i class="icon-angle-up"></i></a>
+                </div>
+                <!--/Goto Top-->
+            </div>
+        </div>
+    </footer>
+    <!--/Footer-->
+
+
+</body>
+</html>

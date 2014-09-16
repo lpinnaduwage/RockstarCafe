@@ -1,0 +1,114 @@
+﻿@model List<RockstarProj.DBModel.RockstarProfile>
+
+@{
+    ViewBag.Title = "Rockstar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int count = 0;
+}
+
+@section featured {
+    @if (!Request.Browser.IsMobileDevice)
+    {
+
+        <section class="title">
+            <div class="container">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h1 style="font-family: 'RockwellCond'">ROCKSTAR PROFILES</h1>
+                    </div>
+                    <div class="span6">
+                        <ul class="breadcrumb pull-right">
+                            <li><a href="~/">Home</a> <span class="divider">/</span></li>
+                            <li class="active">Rockstar</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <p>&nbsp;</p>
+        <p></p>
+        <hr />
+
+        using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {       
+
+            <section id="about-us" class="container main">
+
+                <div class="row-fluid">
+                    <div class="span10">
+                        @Html.TextBox("SearchQuery", null, new { @class = "form-control span12", @style = "font-family: 'SEGOEUIL';font-style:italic;font-size:16px", @placeholder = "Search by city, company, first name, last name, subject, etc" })
+                    </div>
+                    <div class="span2">
+                        <input type="submit" name="Filter" title="Filter" id="Filter" class="center btn btn-success" value="Filter" />
+                    </div>
+                    <hr />
+                </div>
+            </section>
+
+
+
+            <section id="portfolio" class="container main">
+                <ul class="gallery col-4">
+                    @foreach (RockstarProj.DBModel.RockstarProfile item in Model)
+                    {
+                        { count = count + 1; }
+                        <li>
+                            <div class="preview box">
+                                @if (item.ProfilePic != null)
+                                {
+                                    byte[] data = @item.ProfilePic.ToArray();
+                                    string imageBase64 = Convert.ToBase64String(data);
+                                    string imageSrc = string.Format("data:image/png;base64,{0}", imageBase64);
+                                    <img src="@imageSrc" id="1"/>
+                                }
+
+                                <div class="overlay">
+                                </div>
+                                <div class="links">
+                                    <a data-toggle="modal" style="margin-left: 25px;" href="#modal-@count"><i class="icon-eye-open"></i></a>
+                                </div>
+                            </div>
+                            <div class="desc">
+                            </div>
+                            <div id="modal-@count" class="modal hide fade">
+                                <a class="close-modal" href="javascript:;" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></a>
+                                @*  modal-body*@
+                                <div style="overflow-y: scroll; height: 500px; background-color: #E9E8E8">
+
+                                    @if (item.PopupLayout != null)
+                                    {
+                                        byte[] data2 = @item.PopupLayout.ToArray();
+                                        string imageBase642 = Convert.ToBase64String(data2);
+                                        string imageSrc2 = string.Format("data:image/png;base64,{0}", imageBase642);
+                                        <img src="@imageSrc2" id="2"/>
+                                  
+                                    }
+
+
+                                    <br />
+
+                                    @if (!String.IsNullOrEmpty(item.YoutubeLink))
+                                    {
+
+                                        ////www.youtube.com/embed/2A7KhaI_5nY?list=PLLbJ27RDXU80tXv9bLg3uPRc5mXIp4f5e
+                                        <iframe src="@item.YoutubeLink" style="width: 535px; height: 300px"></iframe>
+                                    }
+
+                                </div>
+                            </div>
+                        </li>
+                    }
+                </ul>
+
+            </section>
+        }
+    }
+    else
+    {
+        <h3 style="text-align: center">The mobile website is currently under construction, Sorry for the inconvenience.
+            If you'd like more information about Rockstar Cafe, please visit our website on a computer/desktop.  
+            If you'd like to purchase a ticket to our event, <a href="https://ticketfi.com/event/21/rockstar-cafe-passion-shapes-community">Click here</a>.
+        </h3>   
+    }
+}
+

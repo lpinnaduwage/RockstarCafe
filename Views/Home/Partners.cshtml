@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "Partners";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section featured {
+    @if (!Request.Browser.IsMobileDevice)
+    {
+        <section class="title">
+            <div class="container">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h1 style="font-family: RockwellCond">PARTNERS</h1>
+                    </div>
+                    <div class="span6">
+                        <ul class="breadcrumb pull-right">
+                            <li><a href="~/">Home</a> <span class="divider">/</span></li>
+                            <li class="active">Partners</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <p>&nbsp;</p>
+        <p></p>
+        <hr />
+
+        <section id="about-us" class="container main">
+            <hr>
+            <!-- Mentors -->
+            <h1 style="font-family: RockwellCond" class="center">MENTORS</h1>
+
+            <hr>
+
+            <div class="row-fluid" style="padding-left: 50px;">
+                <div class="span3">
+                    <div class="box" style="width: 450px;">
+                        <p>
+                            <img src="~/Styles/Rockstar/images/Partners/Andrea-Woods-Chiodo-Profile.png" alt="">
+                        </p>
+                    </div>
+                </div>
+                <div class="span3">
+                </div>
+                <div class="span3">
+                    <div class="box" style="width: 450px;">
+                        <p>
+                            <img src="~/Styles/Rockstar/images/Partners/John-Mozas-Profile.png" style="width: 450px;" alt="">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <p>&nbsp;</p>
+            <p></p>
+
+            <div class="row-fluid" style="padding-left: 50px;">
+                <div class="span3">
+                    <div class="box" style="width: 450px;">
+                        <p>
+                            <img src="~/Styles/Rockstar/images/Partners/Jonathan-Grover-Profile.png" alt="">
+                        </p>
+                    </div>
+                </div>
+                <div class="span3">
+                </div>
+                <div class="span3">
+                    <div class="box" style="width: 450px;">
+                        <p>
+                            <img src="~/Styles/Rockstar/images/Partners/Marc-Goodman-Profile.png" alt="">
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <p>&nbsp;</p>
+            <p></p>
+            <hr>
+        </section>
+    }
+    else
+    {
+        <h3 style="text-align: center">The mobile website is currently under construction, Sorry for the inconvenience. 
+            If you'd like more information about Rockstar Cafe, please visit our website on a computer/desktop.  
+            If you'd like to purchase a ticket to our event, <a href="https://ticketfi.com/event/21/rockstar-cafe-passion-shapes-community">Click here</a>.
+        </h3>   
+    }
+}

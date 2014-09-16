@@ -1,0 +1,114 @@
+﻿@model List<RockstarProj.Models.BlogDataModel>
+@{
+    ViewBag.Title = "Blog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+
+}
+@section featured {
+
+    <section class="featured">
+
+        <section class="title">
+            <div class="container">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h1 style="font-family: RockwellCond">BLOG</h1>
+                    </div>
+                    <div class="span6">
+                        <ul class="breadcrumb pull-right">
+                            <li><a href="~/">Home</a> <span class="divider">/</span></li>
+                            <li class="active">Blog</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <p>&nbsp;</p>
+        <p></p>
+        <hr />
+
+
+        @foreach (RockstarProj.Models.BlogDataModel item in Model)
+        {
+            <section id="about-us" class="container main">
+
+
+
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="blog">
+                            <div class="blog-item well">
+                                <a href="#">
+                                    <h2 style="font-family: RockwellCond; color: #76489c">@item.BlogTitle   </h2>
+                                </a>
+                                <div class="blog-meta clearfix">
+                                    <p class="pull-left">
+                                        @*                                    <i class="icon-user"></i>by <a href="#">John</a>
+                                     | <i class="icon-folder-close"></i>Category <a href="#">Bootstrap</a>
+                                     |*@
+
+                                        <i class="icon-calendar"></i>&nbsp;@item.DateCreated
+                                    </p>
+                                    @*                                <p class="pull-right"><i class="icon-comment pull"></i><a href="blog-item.html#comments">3 Comments</a></p>*@
+                                </div>
+                                <p>
+                                    @if (item.FileData != null)
+                                    {
+                                        string imageBase64 = Convert.ToBase64String(item.FileData);
+                                        string imageSrc = string.Format("data:image/png;base64,{0}", imageBase64);
+                                        <img src="@imageSrc" width="100%" height="100%" />
+                                    }
+
+                                </p>
+                                <br />
+                                <p style="font-family: 'SEGOEUIL'; font-size: medium">
+                                    @item.BlogContent
+                                </p>
+
+
+                                <br />
+                                <p>
+                                    @*                                    <img src="" width="100%" alt="" />*@
+                                </p>
+                            </div>
+                            <!-- End Blog Item -->
+                        </div>
+                    </div>
+
+                    <aside class="span4">
+                        <div class="widget search">
+                            <form>
+                                <input type="text" class="input-block-level" placeholder="Search">
+                            </form>
+                        </div>
+                        <!-- /.search -->
+                        <div class="widget ">
+                            <h3>Tag Cloud</h3>
+                            <ul class="tag-cloud unstyled">
+                                <li><a style="background-color: #76489c" class="btn btn-mini btn-primary" href="#">Rockstar</a></li>
+                                <li><a style="background-color: #76489c" class="btn btn-mini btn-primary" href="#">Philanthropy</a></li>
+                                <li><a style="background-color: #76489c" class="btn btn-mini btn-primary" href="#">H.E.L.P</a></li>
+                                <li><a style="background-color: #76489c" class="btn btn-mini btn-primary" href="#">Homelessness</a></li>
+                                <li><a style="background-color: #76489c" class="btn btn-mini btn-primary" href="#">Youth Engagement</a></li>
+                            </ul>
+                        </div>
+                        <!-- End Tag Cloud Widget -->
+
+                        <div class="widget">
+                            <h3>Archive</h3>
+                            <ul class="archive arrow">
+                                <li><a style="color: #76489c" href="#">August 2014</a></li>
+                            </ul>
+                        </div>
+                        <!-- End Archive Widget -->
+
+                    </aside>
+                </div>
+
+
+            </section>
+      
+        }
+    </section>
+}

@@ -1,0 +1,69 @@
+﻿@model List<RockstarProj.DBModel.RockstarProfile>
+@{
+    ViewBag.Title = "Profile Tool";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section featured {
+
+    <section class="featured"></section>
+
+    <section class="title">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span6">
+                    <h1 style="font-family: RockwellCond">PROFILE TOOL</h1>
+                </div>
+                <div class="span6">
+                    <ul class="breadcrumb pull-right">
+                        <li><a href="~/">Home</a> <span class="divider">/</span></li>
+                        <li class="active">Profiles</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <p>&nbsp;</p>
+    <p></p>
+    <hr />
+
+
+    <section id="about-us" class="container main">
+        <div class="row-fluid">
+            @Html.ActionLink("Add", "ProfileEntry", new { GUID = "BAA69FE1-37C9-4A80-BDE6-3C45F394A064", Id = 0 }, new { @class = "btn btn-success" })
+        </div>
+        <br />
+        <div class="row-fluid">
+
+            <table class="table table-striped">
+                <tr>
+                    <th>
+                        <h3>First Name</h3>
+                    </th>
+                    <th>
+                        <h3>Last Name</h3>
+                    </th>
+                    <th>
+                        <h3>Options</h3>
+                    </th>
+                </tr>
+                @foreach (RockstarProj.DBModel.RockstarProfile item in Model)
+                {
+                    <tr>
+                        <td>
+                            <h5>@item.FirstName</h5>
+                        </td>
+                                                <td>
+                            <h5>@item.LastName</h5>
+                        </td>
+                        <td>@Html.ActionLink("Edit", "EditProfileEntry", new { GUID = "BAA69FE1-37C9-4A80-BDE6-3C45F394A064", Id = @item.Id }, new { @class = "btn btn-warning" }) &nbsp; @Html.ActionLink("Delete", "DeleteProfileEntry", new { GUID = "BAA69FE1-37C9-4A80-BDE6-3C45F394A064", Id = @item.Id }, new { @class = "btn btn-warning" })</td>
+                    </tr>
+                }
+            </table>
+
+
+        </div>
+
+    </section>
+
+}

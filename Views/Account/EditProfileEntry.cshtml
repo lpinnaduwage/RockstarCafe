@@ -1,0 +1,191 @@
+﻿@model RockstarProj.DBModel.RockstarProfile
+
+
+@{
+    ViewBag.Title = "Edit Profile Entry";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+@section featured {
+
+    <section class="featured"></section>
+
+    <section class="title">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span6">
+                    <h1 style="font-family: RockwellCond">PROFILE</h1>
+                </div>
+                <div class="span6">
+                    <ul class="breadcrumb pull-right">
+                        <li><a href="~/">Home</a> <span class="divider">/</span></li>
+                        <li class="active">PROFILE</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <p>&nbsp;</p>
+    <p></p>
+    <hr />
+
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {       
+       
+        <section id="about-us" class="container main">
+            <div class="row-fluid">
+                <div class="span8">
+                    <div class="blog">
+                        <div class="blog-item well" style="width: 930px;">
+
+                            <div class="row-fluid">
+                                @Html.TextBoxFor(m => m.FirstName, null, new { @placeholder = "First Name", @style = "width: 400px;" })
+                            </div>
+                            <br />
+                            <div class="row-fluid">
+                                @Html.TextBoxFor(m => m.LastName, null, new { @placeholder = "Last Name", @style = "width: 400px;" })
+                            </div>
+                            <br />
+                            <div class="row-fluid">
+                                @Html.TextBoxFor(m => m.DOB, null, new { @placeholder = "DOB", @style = "width: 300px;" })
+                            </div>
+                            <br />
+
+                            <div class="row-fluid">
+                                @Html.TextBoxFor(m => m.UniversityCollege, null, new { @placeholder = "University or College", @style = "width: 400px;" })
+                            </div>
+                            <br />
+
+                            <div class="row-fluid">
+                                @Html.TextBoxFor(m => m.Program, null, new { @placeholder = "Program", @style = "width: 400px;" })
+                            </div>
+                            <br />
+
+
+                            <div class="row-fluid">
+                                @Html.TextBoxFor(m => m.GradYear, null, new { @placeholder = "Year", @style = "width: 300px;" })
+                            </div>
+                            <br />
+
+
+                            <div class="row-fluid">
+                                @Html.TextBoxFor(m => m.Organization, null, new { @placeholder = "Organization", @style = "width: 400px;" })
+                            </div>
+                            <br />
+
+
+                            <div class="row-fluid">
+                                @Html.TextBoxFor(m => m.Title, null, new { @placeholder = "Title", @style = "width: 300px;" })
+                            </div>
+                            <br />
+
+                            <div class="row-fluid">
+                                @Html.TextBoxFor(m => m.Associates, null, new { @placeholder = "Names of other “Bandmates” ", @style = "width: 400px;" })
+                            </div>
+                            <br />
+
+                            <div class="row-fluid">
+                                @Html.TextBoxFor(m => m.Email, null, new { @placeholder = "Email", @style = "width: 400px;" })
+                            </div>
+                            <br />
+
+                            <div class="row-fluid">
+                                @Html.TextBoxFor(m => m.Phone, null, new { @placeholder = "Phone", @style = "width: 400px;" })
+                            </div>
+                            <br />
+
+                            <div class="row-fluid">
+                                @Html.TextBoxFor(m => m.Facebook, null, new { @placeholder = "Facebook", @style = "width: 400px;" })
+                            </div>
+                            <br />
+
+                            <div class="row-fluid">
+                                @Html.TextBoxFor(m => m.Twitter, null, new { @placeholder = "Twitter", @style = "width: 400px;" })
+                            </div>
+                            <br />
+
+                            <div class="row-fluid">
+                                @Html.TextBoxFor(m => m.LinkedIn, null, new { @placeholder = "LinkedIn", @style = "width: 400px;" })
+                            </div>
+                            <br />
+
+                            <div class="row-fluid">
+                                @Html.TextBoxFor(m => m.Instagram, null, new { @placeholder = "Instagram", @style = "width: 400px;" })
+                            </div>
+                            <br />
+
+                            <div class="row-fluid">
+                                @Html.TextBoxFor(m => m.Skype, null, new { @placeholder = "Skype", @style = "width: 400px;" })
+                            </div>
+                            <br />
+
+                            <div class="row-fluid">
+                                @Html.TextAreaFor(m => m.PositiveChangeQuestion, new { @placeholder = "Describe your high-impact/positive change project or organization, as well as your leadership role in it.", @style = "width: 800px;height:300px;resize:none" })
+                            </div>
+                            <br />
+
+                            <div class="row-fluid">
+                                @Html.TextBoxFor(m => m.ImpactQuestion, null, new { @placeholder = "Describe the impact you’ve had to date (Use metrics if applicable).", @style = "width: 800px;height:300px;resize:none" })
+                            </div>
+                            <br />
+
+                            <div class="row-fluid">
+                                @Html.TextBoxFor(m => m.ExampleQuestion, null, new { @placeholder = "Give an example of a time over the course of your project where you’ve exhibited one of Heart, Soul, Brains, or Courage. ", @style = "width: 800px;height:300px;resize:none" })
+                            </div>
+
+                            <div class="row-fluid">
+                                @Html.TextBoxFor(m => m.LearnQuestion, null, new { @placeholder = "What can people learn from you at a Rockstar Café event? ", @style = "width: 800px;height:300px;resize:none" })
+                            </div>
+                            <br />
+
+                            <div class="row-fluid">
+                                @Html.TextBoxFor(m => m.AdditonalQuestion, null, new { @placeholder = "Is there anything else you want your profile to say?", @style = "width: 800px;height:300px;resize:none" })
+                            </div>
+                            <br />
+
+                            <div class="row-fluid">
+                                <label>Profile Picture</label>
+                                <input type="file" name="file" id="file" />
+                                @*@Html.TextBoxFor(m => item, new { @type = "file", @class = "form-control" })*@
+                            </div>
+                            <br />
+
+                            <div class="row-fluid">
+                                <label>Popup Layout</label>
+                                <input type="file" name="popupFile" id="popupFile" />
+                                @*@Html.TextBoxFor(m => item, new { @type = "file", @class = "form-control" })*@
+                            </div>
+                            <br />
+                                                        
+                            <div class="row-fluid">
+                                @Html.TextBoxFor(m => m.YoutubeLink, null, new { @placeholder = "Youtube Link", @style = "width: 400px;" })
+                            </div>
+                            <br />
+
+
+                            <div class="center">
+                                <div class="row-fluid">
+                                    <div class="controls span5"></div>
+                                    <div class="controls span3">
+                                        <input type="submit" name="Submit" id="Submit" class="btn btn-success btn-large btn-block" value="Done" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Blog Item -->
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+        </section>
+    }
+
+</section>
+
+}
+
+

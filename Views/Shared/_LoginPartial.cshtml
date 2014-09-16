@@ -1,0 +1,12 @@
+﻿@if (Request.IsAuthenticated)
+{
+    <text>
+    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+    {
+        @Html.AntiForgeryToken()
+        <h4><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></h4>
+    }
+    </text>
+}
+
+

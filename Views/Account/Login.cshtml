@@ -1,0 +1,56 @@
+﻿@model RockstarProj.Models.LoginModel
+
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<hgroup class="title center">
+    <h1>@ViewBag.Title</h1>
+</hgroup>
+
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <section id="registration-page" class="container">
+        <div class="center">
+            <div class="registration-form" style="border-top-width: 20px;">
+                <h2 style="font-family: RockwellCond">Log in</h2>
+
+                <div class="control-group row-fluid">
+                    <div class="controls span2">
+                        @Html.TextBoxFor(m => m.UserName, null, new { @placeholder = "Username" })
+                        @Html.ValidationMessageFor(m => m.UserName)
+                    </div>
+                </div>
+
+                <div class="control-group row-fluid">
+                    <div class="controls span2">
+                        @Html.PasswordFor(m => m.Password, new { @placeholder = "Password" })
+                        @Html.ValidationMessageFor(m => m.Password)
+                    </div>
+                </div>
+
+                <div class="control-group row-fluid">
+                    <div class="controls">
+                        <input type="submit" name="Submit" id="Submit" class="btn btn-success btn-large btn-block" value="Submit" />
+                    </div>
+                </div>
+
+
+                <div class="control-group row-fluid">
+                    <div class="controls">
+                        @Html.ActionLink("Register", "Register") if you don't have an account.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

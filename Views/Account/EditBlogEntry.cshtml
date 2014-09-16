@@ -1,0 +1,80 @@
+﻿@model RockstarProj.Models.BlogDataModel
+
+
+@{
+    ViewBag.Title = "Edit Entry";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    
+
+}
+@section featured {
+
+    <section class="featured"></section>
+
+    <section class="title">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span6">
+                    <h1 style="font-family: RockwellCond">BLOG</h1>
+                </div>
+                <div class="span6">
+                    <ul class="breadcrumb pull-right">
+                        <li><a href="~/">Home</a> <span class="divider">/</span></li>
+                        <li class="active">Blog</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <p>&nbsp;</p>
+    <p></p>
+    <hr />
+
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {       
+       
+        <section id="about-us" class="container main">
+            <div class="row-fluid">
+                <div class="span8">
+                    <div class="blog">
+                        <div class="blog-item well">
+
+                            <div class="row-fluid">
+                                    @Html.TextBoxFor(m => m.BlogTitle, null, new { @placeholder = "Blog Title" , @style="width: 690px;" })
+                            </div>
+                            <br />
+
+                            <div class="row-fluid">
+                                @Html.TextBoxFor(m => m.FileContent, new { @type = "file", @class = "form-control" })
+                            </div>
+                            <br />
+                            <div class="row-fluid">
+                                @Html.TextAreaFor(m => m.BlogContent, new { @placeholder = "Blog Content" , @style="width: 690px;height: 357px;" })
+                            </div>
+                            <br />
+                            <div class="center">
+                                <div class="row-fluid">
+                                    <div class="controls span5"></div>
+                                    <div class="controls span3">
+                                        <input type="submit" name="Submit" id="Submit" class="btn btn-success btn-large btn-block" value="Done" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Blog Item -->
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+        </section>
+    }
+
+</section>
+
+}
+
+

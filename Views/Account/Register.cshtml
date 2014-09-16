@@ -1,0 +1,52 @@
+﻿@model RockstarProj.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<hgroup class="title center">
+    <h1>@ViewBag.Title</h1>
+</hgroup>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()    
+    <section id="registration-page" class="container">
+        <div class="center">
+            <div class="registration-form" style="border-top-width: 20px;">
+                <h2 style="font-family: RockwellCond">Registration Form</h2>
+
+                <div class="control-group row-fluid">
+                    <div class="controls span2">
+                        @Html.TextBoxFor(m => m.UserName, null, new { @placeholder = "Username" })
+                        @Html.ValidationMessageFor(m => m.UserName)
+                    </div>
+                </div>
+
+                <div class="control-group row-fluid">
+                    <div class="controls span2">
+                        @Html.PasswordFor(m => m.Password, new { @placeholder = "Password" })
+                        @Html.ValidationMessageFor(m => m.Password)
+                    </div>
+                </div>
+
+                                <div class="control-group row-fluid">
+                    <div class="controls span2">
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @placeholder = "Confirm Password" })
+                        @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                    </div>
+                </div>
+
+                <div class="control-group row-fluid">
+                    <div class="controls">
+                        <input type="submit" name="Submit" id="Submit" class="btn btn-success btn-large btn-block" value="Register" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

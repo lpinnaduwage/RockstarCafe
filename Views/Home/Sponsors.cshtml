@@ -1,0 +1,115 @@
+﻿@{
+    ViewBag.Title = "Sponsors";
+}
+
+@section featured {
+
+    @if (!Request.Browser.IsMobileDevice)
+    {
+
+        <section class="title">
+            <div class="container">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h1 style="font-family: 'RockwellCond'">PARTNERS & SPONSORS</h1>
+                    </div>
+                    <div class="span6">
+                        <ul class="breadcrumb pull-right">
+                            <li><a href="~/">Home</a> <span class="divider">/</span></li>
+                            <li class="active">Sponsors</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <p>&nbsp;</p>
+        <p></p>
+        <hr />
+
+        <section id="about-us" class="container main">
+
+
+            <hr>
+
+            <div class="row-fluid">
+
+                <div class="span4">
+                    <div class="box">
+                        <p>
+                            <a href="http://www.poetretail.com/">
+                                <img src="~/Styles/Rockstar/images/Sponsors/Black-POET-Logo.png" alt="" />
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="span4">
+                    <div class="box">
+                        <p>
+                            <a href="https://uwaterloo.ca/conrad-business-entrepreneurship-technology/">
+                                <img src="~/Styles/Rockstar/images/Sponsors/Black-Conrad-Logo.png" alt="" />
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="span4">
+                    <div class="box">
+                        <p>
+                            <a href="https://uwaterloo.ca/stpauls/greenhouse">
+                                <img src="~/Styles/Rockstar/images/Sponsors/Black-St.-Pauls-Logo.png" alt="" />
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <p>&nbsp;</p>
+            <p></p>
+
+            <div class="row-fluid">
+                <div class="span4">
+                    <div class="box">
+                        <p>
+                            <a href="http://velocity.uwaterloo.ca/">
+                                <img src="~/Styles/Rockstar/images/Sponsors/Black-Velocity-Logo.png" alt="" />
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="span4">
+                    <div class="box">
+                        <p>
+                            <a href="http://www.uwesociety.com/">
+                                <img src="~/Styles/Rockstar/images/Sponsors/Black-EnSoc-Logo.png" alt="" />
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="span4">
+                    <div class="box">
+                        <p>
+                        </p>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <p>&nbsp;</p>
+            <p></p>
+            <hr>
+        </section>
+    }
+    else
+    {
+        <h3 style="text-align: center">The mobile website is currently under construction, Sorry for the inconvenience.
+            If you'd like more information about Rockstar Cafe, please visit our website on a computer/desktop.  
+            If you'd like to purchase a ticket to our event, <a href="https://ticketfi.com/event/21/rockstar-cafe-passion-shapes-community">Click here</a>.
+        </h3>   
+    }
+}
